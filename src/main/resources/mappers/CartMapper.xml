@@ -52,10 +52,10 @@
         checked,
       </if>
       <if test="createTime != null" >
-        now(),
+        create_time,
       </if>
       <if test="updateTime != null" >
-        now(),
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -101,7 +101,7 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null" >
-        now(),
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -113,7 +113,7 @@
       quantity = #{quantity,jdbcType=INTEGER},
       checked = #{checked,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
