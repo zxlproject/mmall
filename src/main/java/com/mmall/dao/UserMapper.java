@@ -16,19 +16,4 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    int checkUsername(String username);
-
-    User selectLogin(@Param("username") String username,@Param("password") String password);
-
-    int checkEmail(String email);
-
-    String selectQuesitonByUsername(String username);
-
-    int checkAnswer(@Param("username") String username, @Param("question") String question, @Param("answer") String answer);
-
-    int updatePasswordByUsername(@Param("username") String username, @Param("passwordNew") String passwordNew);
-
-    int checkPassword(@Param("password") String password,@Param("userId") Integer userId);
-
-    int checkPasswordByUserId(@Param("eamil") String email, @Param("userId")Integer userId);
 }
